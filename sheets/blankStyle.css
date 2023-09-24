@@ -1,24 +1,48 @@
 body{
-    font-family: sans-serif , Arial, Helvetica;
+    background-color: black;
+    color: white;
 }
 
+h2{
+    font-family: sans-serif;
+}
+h1 h2 h3 h4 h5 h6{
+    text-transform: uppercase;
+}
+
+::selection {
+    background: red;
+  }
 
 nav li { 
     display: inline;
     margin: 0px 4px;
+ 
 }
 
+nav li a{
+    cursor: wait;
+}
+
+
 nav li:first-child a { 
+   
     border-bottom: 1px solid black;
     display: inline;
     margin: 0px 4px;
     color: #3e4749;
+    text-decoration: underline;
 }
 
 a{
-    color: #ff4b01;
+    color: green;
+    text-decoration: none;
 }
 
+
+h2::first-letter{
+    font-size: x-large;
+}
 
 header{
     padding: 40px;
@@ -28,3 +52,42 @@ header{
 
 
 
+th {
+   text-transform: uppercase; 
+}
+
+.top{
+    color: rgb(255, 174, 174);
+}
+
+em{
+    background-color: blue;
+}
+
+#the_most_important{
+    text-transform: uppercase;
+}
+
+
+ td:hover{ 
+ color: aqua;
+}
+nav{
+    display: inline;
+    text-decoration: none;
+}
+
+nav:first-child{
+text-decoration: underline;
+}
+
+
+input{ 
+    height: 20px;
+    border-color:lightgrey ;
+
+}
+
+#name{
+ height: 50px;   
+}

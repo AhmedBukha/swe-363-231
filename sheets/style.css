@@ -1,8 +1,35 @@
-body{ background-color: black;
-color: white;
+body{
+    font-family: sans-serif , Arial, Helvetica;
+}
+
+
+nav li { 
+    display: inline;
+    margin: 0px 4px;
+}
+
+nav li:first-child a { 
+    border-bottom: 1px solid black;
+    display: inline;
+    margin: 0px 4px;
+    color: #3e4749;
+}
+
+
+
+
+header{
+    padding: 40px;
+    background-color: #879499;
+    color: white;
+}
+
+
+
+th {
+   text-transform: uppercase; 
 }
 
 a{
-    color: aqua;
+    color: green;
 }
-
