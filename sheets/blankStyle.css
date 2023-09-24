@@ -1,10 +1,22 @@
+
+
+*{
+    font-family: Libre Baskerville;
+}
+
 body{
-    background-color: black;
-    color: white;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
 }
 
 h2{
-    font-family: sans-serif;
+
+font-family: Libre Baskerville;
+font-size: 42px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
 h1 h2 h3 h4 h5 h6{
     text-transform: uppercase;
@@ -14,24 +26,53 @@ h1 h2 h3 h4 h5 h6{
     background: red;
   }
 
-nav li { 
+nav { 
     display: inline;
     margin: 0px 4px;
+    visibility: hidden;
  
 }
+nav li:hover { 
+    display: inline;
+    margin: 0px 4px;
+    visibility: visible;
+
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    @keyframes pulse {
+        50% {
+          opacity: 0;
+        }
+      }
+ 
+}
+
+nav li:nth-child(2) {animation-delay: 0.0s; }
+nav li:nth-child(3) {animation-delay: 0.5s; }
+nav li:nth-child(4) {animation-delay: 1.0s; }
+
+
 
 nav li a{
     cursor: wait;
 }
 
 
-nav li:first-child a { 
+nav li:first-child  { 
    
     border-bottom: 1px solid black;
     display: inline;
     margin: 0px 4px;
     color: #3e4749;
     text-decoration: underline;
+    visibility: visible;
+}
+
+
+
+nav :hover{ 
+visibility: visible;
 }
 
 a{
@@ -91,3 +132,30 @@ input{
 #name{
  height: 50px;   
 }
+
+
+footer{
+    background: #1C1C1C;
+    color: #FFF;
+text-align: center;
+font-family: Open Sans;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+
+#btn:hover{
+   background-color: red;
+   transition: ease 2s;
+
+   @keyframes sampleAnimation {
+    100%{
+        background-color: black
+    }
+   }
+}
+#hamburger-menu{
+    max-width: 20;
+}
+
