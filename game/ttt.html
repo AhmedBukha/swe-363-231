@@ -58,6 +58,7 @@
             <div class="cell"></div>
             <div class="cell"></div>
         </div>
+        
         <button id="refreshButton">Reset</button>
         <script>
 // turn managment.
@@ -69,6 +70,15 @@
 //switch turns if not end
 
 // announce winner.
+
+
+
+
+
+
+
+
+
 const refreshButton = document.getElementById('refreshButton');
 
 refreshButton.addEventListener('click', function() {
@@ -93,6 +103,87 @@ refreshButton.addEventListener('click', function() {
 
             // // add letters
             document.querySelector(".board").addEventListener("click", play_turn)
+
+            document.addEventListener('keydown', (event) => {
+  var key_pressed = event.key;
+  var code = event.code;
+  let q = row1.querySelector(".cell:nth-child(1)")
+  let w = row1.querySelector(".cell:nth-child(2)")
+  let e = row1.querySelector(".cell:nth-child(3)")
+
+  let a = row2.querySelector(".cell:nth-child(1)")
+  let s = row2.querySelector(".cell:nth-child(2)")
+  let d = row2.querySelector(".cell:nth-child(3)")
+
+  let z = row3.querySelector(".cell:nth-child(1)")
+  let x = row3.querySelector(".cell:nth-child(2)")
+  let c = row3.querySelector(".cell:nth-child(3)")
+  // Alert the key name and key code on keydown
+
+if(key_pressed == "q"){
+    console.log("q");
+    play_keyboard(q);
+    
+}
+
+if(key_pressed == "w"){
+    console.log("w");
+    play_keyboard(w);
+    
+}
+
+if(key_pressed == "e"){
+    console.log("e");
+    play_keyboard(e);
+    
+}
+
+
+if(key_pressed == "a"){
+    console.log("a");
+    play_keyboard(a);
+    
+}
+
+if(key_pressed == "s"){
+    console.log("s");
+    play_keyboard(s);
+    
+}
+
+if(key_pressed == "d"){
+    console.log("d");
+    play_keyboard(d);
+    
+}
+
+
+if(key_pressed == "z"){
+    console.log("z");
+    play_keyboard(z);
+    
+}
+
+if(key_pressed == "x"){
+    console.log("x");
+    play_keyboard(x);
+    
+}
+
+if(key_pressed == "c"){
+    console.log("c");
+    play_keyboard(c);
+    
+}
+
+
+
+
+
+}, false);
+
+
+
            
         function play_turn(e) {
 
@@ -106,7 +197,7 @@ textElement = document.createTextNode(`${letter}`)
 
 //     //change turn
 turn = (turn + 1) % 2;
-console.log(cell.textContent == null)
+
 
 //change letter
 if(cell.textContent == ''){
@@ -250,6 +341,176 @@ else{
                
 
             }
+
+
+
+
+
+
+
+
+
+            /////////
+
+
+            function play_keyboard(e) {
+
+//     //get target
+if(!isFinish){
+    cell = e
+
+//add the letter
+textElement = document.createTextNode(`${letter}`)
+
+
+//     //change turn
+turn = (turn + 1) % 2;
+
+
+//change letter
+if(cell.textContent == ''){
+cell.style.backgroundColor ="white";
+
+if (turn == 0) {
+letter = "X"
+} else {
+letter = "O"
+}
+cell.appendChild(textElement)
+isDraw++;
+}
+
+
+//Checking if win:
+
+if(row1.querySelector(".cell:nth-child(3)").textContent== "X"  && row2.querySelector(".cell:nth-child(3)").textContent== "X" && row3.querySelector(".cell:nth-child(3)").textContent == "X" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "X Won !"
+isFinish = true;
+}
+
+if(row1.querySelector(".cell:nth-child(3)").textContent== "O"  && row2.querySelector(".cell:nth-child(3)").textContent== "O" && row3.querySelector(".cell:nth-child(3)").textContent == "O" ) {
+console.log("win O ");
+document.getElementById("turn").innerText = "O Won !"
+isFinish = true;
+}
+
+
+if(row1.querySelector(".cell:nth-child(2)").textContent== "X"  && row2.querySelector(".cell:nth-child(2)").textContent== "X" && row3.querySelector(".cell:nth-child(2)").textContent == "X" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "X Won !"
+isFinish = true;
+}
+
+if(row1.querySelector(".cell:nth-child(2)").textContent== "O"  && row2.querySelector(".cell:nth-child(2)").textContent== "O" && row3.querySelector(".cell:nth-child(2)").textContent == "O" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "O Won !"
+isFinish = true;
+}
+
+if(row1.querySelector(".cell:nth-child(1)").textContent== "X"  && row2.querySelector(".cell:nth-child(1)").textContent== "X" && row3.querySelector(".cell:nth-child(1)").textContent == "X" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "X Won !"
+isFinish = true;
+}
+
+if(row1.querySelector(".cell:nth-child(1)").textContent== "O"  && row2.querySelector(".cell:nth-child(1)").textContent== "O" && row3.querySelector(".cell:nth-child(1)").textContent == "O" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "O Won !"
+isFinish = true;
+}
+
+
+
+if(row1.querySelector(".cell:nth-child(1)").textContent== "X"  && row1.querySelector(".cell:nth-child(2)").textContent== "X" && row1.querySelector(".cell:nth-child(3)").textContent == "X" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "X Won !"
+isFinish = true;
+}
+
+if(row1.querySelector(".cell:nth-child(1)").textContent== "O"  && row1.querySelector(".cell:nth-child(2)").textContent== "O" && row1.querySelector(".cell:nth-child(3)").textContent == "O" ) {
+console.log("win O ");
+document.getElementById("turn").innerText = "O Won !"
+isFinish = true;
+}
+
+
+if(row2.querySelector(".cell:nth-child(1)").textContent== "X"  && row2.querySelector(".cell:nth-child(2)").textContent== "X" && row2.querySelector(".cell:nth-child(3)").textContent == "X" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "X Won !"
+isFinish = true;
+}
+
+if(row2.querySelector(".cell:nth-child(1)").textContent== "O"  && row2.querySelector(".cell:nth-child(2)").textContent== "O" && row2.querySelector(".cell:nth-child(3)").textContent == "O" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "O Won !"
+isFinish = true;
+}
+
+if(row3.querySelector(".cell:nth-child(1)").textContent== "X"  && row3.querySelector(".cell:nth-child(2)").textContent== "X" && row3.querySelector(".cell:nth-child(3)").textContent == "X" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "X Won !"
+isFinish = true;
+}
+
+if(row3.querySelector(".cell:nth-child(1)").textContent== "O"  && row3.querySelector(".cell:nth-child(2)").textContent== "O" && row3.querySelector(".cell:nth-child(3)").textContent == "O" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "O Won !"
+isFinish = true;
+}
+
+
+if(row1.querySelector(".cell:nth-child(3)").textContent== "X"  && row2.querySelector(".cell:nth-child(2)").textContent== "X" && row3.querySelector(".cell:nth-child(1)").textContent == "X" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "X Won !"
+isFinish = true;
+}
+
+if(row1.querySelector(".cell:nth-child(3)").textContent== "O"  && row2.querySelector(".cell:nth-child(2)").textContent== "O" && row3.querySelector(".cell:nth-child(1)").textContent == "O" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "O Won !"
+isFinish = true;
+}
+
+
+if(row1.querySelector(".cell:nth-child(1)").textContent== "X"  && row2.querySelector(".cell:nth-child(2)").textContent== "X" && row3.querySelector(".cell:nth-child(3)").textContent == "X" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "X Won !"
+isFinish = true;
+}
+
+if(row1.querySelector(".cell:nth-child(1)").textContent== "O"  && row2.querySelector(".cell:nth-child(2)").textContent== "O" && row3.querySelector(".cell:nth-child(3)").textContent == "O" ) {
+console.log("win x");
+document.getElementById("turn").innerText = "O Won !"
+isFinish = true;
+}
+
+
+
+
+
+
+
+
+
+
+//change title
+
+
+
+if(isDraw>=9){
+document.getElementById("turn").innerText = "It is draw!"
+}
+else{
+if(!isFinish)
+document.getElementById("turn").innerText = `Now it's ${letter} turn`
+}
+}
+   
+
+}
+
+
 
             
 
