@@ -58,6 +58,7 @@
             <div class="cell"></div>
             <div class="cell"></div>
         </div>
+        <button id="refreshButton">Reset</button>
         <script>
 // turn managment.
 
@@ -68,7 +69,11 @@
 //switch turns if not end
 
 // announce winner.
+const refreshButton = document.getElementById('refreshButton');
 
+refreshButton.addEventListener('click', function() {
+    location.reload();
+});
            const  board =  document.querySelector(".board");//Get element whats the differenct ? 
            let row1 = board.querySelector(".row:nth-child(1)")
            let row2 = board.querySelector(".row:nth-child(2)")
