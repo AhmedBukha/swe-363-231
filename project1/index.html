@@ -61,6 +61,11 @@
       </tr>
     </table>
     <a href="/project2/index.html"> My Design to the special excerise</a>
+
+    <div id="jokes">
+
+      Jokes: 
+    </div>
 </main>
  
 <a href="/game/ttt.html"> go to game</a>
@@ -76,6 +81,28 @@ div.textContent = ">In today's rapidly evolving digital landscape, <em>technolog
 
 document.getElementById("article").appendChild(div)
 
+
+
+</script>
+<script>
+
+
+async function getJokes(){
+  const response = await fetch("https://geek-jokes.sameerkumar.website/api?format=");
+  const movies = await response.json();
+  console.log(movies);
+
+let joke = document.createElement('h1')
+
+joke.textContent = movies;
+
+  document.querySelector("#jokes").appendChild(joke);
+
+  document.appendChild( );
+}
+
+
+ getJokes();
 
 
 </script>
