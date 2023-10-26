@@ -66,6 +66,12 @@
 
       Jokes: 
     </div>
+
+    <div id="object">
+
+
+
+    </div>
 </main>
  
 <a href="/game/ttt.html"> go to game</a>
@@ -98,13 +104,53 @@ joke.textContent = movies;
 
   document.querySelector("#jokes").appendChild(joke);
 
-  document.appendChild( );
+  document.appendChild(joke );
 }
 
 
  getJokes();
 
 
+</script>
+
+<script>
+
+  //Object: 
+  let article = { 
+    title: "Why KFUPM is Hard",
+    body: " KFUPM is known for its high academic standards and rigorous programs. The university offers a wide range of engineering, science, and business programs, which are demanding in terms of coursework and assessments."
+  }
+
+  function createArticle(title,body) {
+  const obj = {};
+  obj.title = title;
+  obj.body = body
+  return obj;
+}
+let objectArtilce = document.getElementById("object")
+
+let art1 = document.createElement("div")
+let title1 = document.createElement("h2")
+let body1 = document.createElement("p")
+title1.append(article.title);
+body1.append(article.body);
+
+art1.appendChild(title1)
+art1.appendChild(body1)
+
+
+objectArtilce.appendChild(art1)
+
+
+
+
+
+</script>
+<script>
+  let anynoymsFunction  = function(){
+    console.log("test123")
+  }
+  anynoymsFunction();
 </script>
 </body>
 <footer>
