@@ -11,8 +11,7 @@ const target = args[3]
 
 const readStream = fs.createReadStream(source);
 
-// Create a writable stream to the destination file
-const writeStream = fs.createWriteStream(target);
+
 
 const extentions = [".txt",".png"]
 
@@ -22,6 +21,7 @@ fs.readdir(source, (e,files) => {
 
     if(e){
         console.log("Error reading the specific file");
+        console.log(e)
         process.exit();
     }
 
@@ -29,12 +29,20 @@ fs.readdir(source, (e,files) => {
     for(let file of files){
         let ext = path.extname(file)
         if(extentions.includes(ext)){
-            fileToBeCoppied.push(file);
+            console.log(file)
+            
+            fs.copyFile(`./${source}/${file}` , `./${target}/${file}`, (err) =>{
+                console.log(err)
+                
+                process.exit();
+            })
+            
         }
     }
 
 
 
-    console.log(files);
+
+   
         
 })
