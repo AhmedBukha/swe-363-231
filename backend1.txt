@@ -1,0 +1,8 @@
+URL: https://www.failory.com/
+IP: 34.234.52.18
+Number of requests: 12
+Type of requets: GET, POST , PUT
+Biggest file: an Image
+Size: 79.4kB
+
+
